@@ -1,0 +1,165 @@
+site_name: فاعل خير
+# site_url: https://yourdomain.com # Optional: replace with your actual domain
+site_description: "Doom One–themed developer documentation site."
+site_author: Mohamed Attia
+
+repo_url: https://github.com/Fa3elKheer/Fa3elKheer.git
+repo_name: Fa3elKheer/Fa3elKheer # Optional: replace with your actual repo
+edit_uri: edit/main/docs/
+
+nav:
+  - 🏠 الصفحة الرئيسية:
+      - نظرة عامة: index.md
+
+  - 📿 الدين:
+      - مقدمة: deen/index.md
+      - القرآن الكريم:
+          - فضائل القرآن: deen/quran/virtues.md
+          - سور مختارة: deen/quran/suras.md
+          - تفسير مبسط: deen/quran/tafseer.md
+      - الحديث الشريف:
+          - مقدمة عن الحديث: deen/hadith/intro.md
+          - الأربعون النووية: deen/hadith/nawawi.md
+          - صحيح البخاري: deen/hadith/bukhari.md
+      - السيرة النبوية:
+          - مولد النبي ﷺ: deen/seerah/birth.md
+          - الهجرة: deen/seerah/hijrah.md
+          - الغزوات: deen/seerah/battles.md
+      - العقيدة:
+          - التوحيد: deen/aqeedah/tawheed.md
+          - الأسماء والصفات: deen/aqeedah/names.md
+      - الأخلاق الإسلامية:
+          - الصدق: deen/akhlaq/sidq.md
+          - الأمانة: deen/akhlaq/amanah.md
+          - بر الوالدين: deen/akhlaq/parents.md
+      - فقه العبادات:
+          - الطهارة: deen/fiqh/taharah.md
+          - الصلاة: deen/fiqh/salah.md
+          - الصيام: deen/fiqh/sawm.md
+          - الزكاة: deen/fiqh/zakah.md
+          - الحج: deen/fiqh/hajj.md
+      - الدعوة:
+          - أساليب الدعوة: deen/dawah/methods.md
+          - آداب الداعية: deen/dawah/etiquette.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+  # logo: null
+
+  palette:
+    - scheme: slate # 🌑 Dark mode (Doom One)
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    - scheme: default # 🌕 Light mode
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+  font:
+    text: Roboto
+    code: Fira Code Nerd Font
+
+  language: ar
+
+  features:
+    # - navigation.expand
+    #
+    - content.code.select
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.top
+    - navigation.tracking # Updates the URL as you scroll (great for deep docs)
+    - navigation.tabs # Top-level tabs for main sections
+    - navigation.expand
+    - content.tabs.link
+    - navigation.prune
+    - content.code.annotate
+    - navigation.top # Back to top button
+
+    - navigation.footer # Back to top button
+    - toc.follow
+    - content.action.edit # Show edit icon in floating toolbar
+    - content.action.view # View on GitHub button
+
+    # 🧩 Content Enhancements
+    - content.code.copy # Adds copy button to code blocks
+    - content.code.annotate # Annotated code support
+    - content.tabs.link
+    # 🔍 Optional
+    - search.highlight # Highlight search terms on match
+    - search.suggest
+    - announce.dismis
+    - search.share
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Fa3elKheer
+  generator: false
+  meta:
+    description: "Technical documentation for ATIDocs by Mohamed Attia."
+    keywords: "mkdocs, material, doom one, documentation, python, frontend"
+    author: "Mohamed Attia"
+
+copyright: Copyright © 2025 Mohamed Attia
+
+markdown_extensions:
+  - attr_list
+  - footnotes
+  - md_in_html
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      use_pygments: true
+      line_spans: __span
+      pygments_lang_class: true
+      anchor_linenums: true
+      # pygments_style: monokai
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - tables
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+  - pymdownx.arithmatex:
+      generic: true
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - "javascripts/keyhints.js" # MkDocs will automatically check `overrides/`
+
+plugins:
+  - search
+  - offline

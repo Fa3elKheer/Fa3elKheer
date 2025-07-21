@@ -1,0 +1,201 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <style>
+    /* === Base Styles: Hiding default elements & Hero setup === */
+    .md-header {
+      position: initial;
+    }
+    .md-main__inner {
+      margin: 0;
+    }
+    .md-content {
+      display: none;
+    }
+
+    @media screen and (min-width: 60em) {
+      .md-sidebar--secondary {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 76.25em) {
+      .md-sidebar--primary {
+        display: none;
+      }
+    }
+
+    /* --- Hero Section --- */
+    .atidocs-hero__bg {
+      background: url('assets/images/images.jpg') center center / cover no-repeat fixed;
+      padding: 6rem 1rem 4rem;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+    .atidocs-hero__bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .atidocs-hero__teaser {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .atidocs-hero__teaser h1 {
+      font-size: 2.75rem !important;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white !important;
+    }
+[data-md-color-scheme="default"] .atidocs-hero__teaser h1 {
+      font-size: 2.75rem !important;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white !important;
+    }
+    .atidocs-hero__teaser p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .atidocs-buttons a {
+      margin: 0 0.5rem;
+    }
+    .atidocs-scroll {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+    .atidocs-scroll svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: white;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+    
+    /* --- Content Sections --- */
+    .atidocs-sections {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .atidocs-sections h2 {
+      margin-top: 2rem;
+    }
+
+    /* === Responsive Adjustments for Tablet & Mobile === */
+
+    /* Tablet-sized devices (e.g., iPads) */
+    @media screen and (max-width: 1024px) {
+      .atidocs-hero__bg {
+        /* 'fixed' background can be jerky on mobile, 'scroll' is safer */
+        background-attachment: scroll;
+        padding: 5rem 1rem 3rem;
+      }
+      .atidocs-hero__teaser h1 {
+        font-size: 2.25rem;
+      }
+      .atidocs-hero__teaser p {
+        font-size: 1.1rem;
+      }
+      .atidocs-sections {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    /* Mobile-sized devices (e.g., iPhones) */
+    @media screen and (max-width: 768px) {
+      .atidocs-hero__bg {
+        padding: 4rem 1rem 2rem;
+      }
+      .atidocs-hero__teaser h1 {
+        font-size: 1.75rem; /* Further reduce font for small screens */
+      }
+      .atidocs-hero__teaser p {
+        font-size: 1rem;
+      }
+      .atidocs-buttons a {
+        /* Stack buttons vertically for easy tapping */
+        display: block;
+        margin: 0.75rem auto;
+        width: fit-content;
+      }
+      .atidocs-scroll {
+        margin-top: 2rem;
+      }
+      .atidocs-scroll svg {
+        width: 2rem;
+        height: 2rem;
+      }
+      .atidocs-sections {
+        padding: 2rem 1rem;
+      }
+      .atidocs-sections h2 {
+        font-size: 1.5rem;
+      }
+      .atidocs-sections pre {
+        /* Allows long code lines to scroll horizontally instead of breaking layout */
+        overflow-x: auto;
+      }
+    }
+  </style>
+
+<section class="atidocs-hero__bg">
+  <div class="atidocs-hero__teaser md-typeset">
+    <h1>👋 مرحبًا بك في Fa3elKheer</h1>
+<p><strong>مرجع إلى مرجعيتك... ارسم طريقك بيدك</strong></p>
+    <div class="atidocs-buttons">
+      <a href="about.html" class="md-button md-button--primary">من نحن</a>
+      <a href="#atidocs-sections" style="color: white;"  class="md-button md-button--secondary">اعرف المزيد</a>
+    </div>
+    <div class="atidocs-scroll">
+      <a href="#atidocs-sections" aria-label="التمرير لأسفل">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 16l-6-6h12z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="atidocs-sections" class="atidocs-sections md-typeset">
+  <h2>🕹️ التنقل بلوحة المفاتيح</h2>
+  <ul>
+    <li><code>h</code> / <code>j</code> / <code>k</code> / <code>l</code> — التحرك كما في Vim</li>
+    <li><code>g</code> + <code>g</code> — الانتقال إلى <strong>أعلى</strong> الصفحة</li>
+    <li><strong>Shift</strong> + <code>g</code> — الانتقال إلى <strong>أسفل</strong> الصفحة</li>
+    <li><code>f</code> — تفعيل <strong>وضع التلميحات</strong></li>
+  </ul>
+  <blockquote>
+    ⚡ مدعوم من <a href="https://github.com/philc/vimium" target="_blank">Vimium</a>
+  </blockquote>
+
+  <!-- <h2>📚 الأقسام</h2> -->
+  <!-- <ul> -->
+  <!--   <li>🧠 <strong><a href="frontend/">الواجهة الأمامية</a></strong>: React، TypeScript، Vue، Next.js…</li> -->
+  <!--   <li>⚙️ <strong><a href="backend/">الواجهة الخلفية</a></strong>: Node.js، GraphQL، قواعد البيانات</li> -->
+  <!--   <li>🔧 <strong><a href="devops/">DevOps</a></strong>: Docker، CI/CD، Nginx</li> -->
+  <!--   <li>🧪 <strong><a href="testing/">الاختبار</a></strong>: Jest، Vitest</li> -->
+  <!--   <li>📊 <strong><a href="algorithms/">الخوارزميات والأنماط</a></strong></li> -->
+  <!--   <li>💻 <strong><a href="programming/">اللغات البرمجية</a></strong>: C، C++، Python، Lua…</li> -->
+  <!-- </ul> -->
+  <!---->
+  <h2>🔓 انسخ واستخدم Fa3elKheer Template</h2>
+  <p>هذا المشروع <strong>مفتوح المصدر</strong>.</p>
+  <pre><code>git clone https://github.com/Fa3elKheer/Fa3elKheer.git</code></pre>
+</section>
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
